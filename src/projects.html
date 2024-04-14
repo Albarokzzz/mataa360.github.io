@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  </head>
+  <style>
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 30px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0); /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      border-radius: 10px;
+      margin: auto;
+      padding: 0 5px;
+      border: 1px solid #888;
+      width: 90%;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #000000;
+      float: right;
+      font-size: 40px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <!-- Navbar -->
+    <section>
+      <nav
+        class="relative px-6 md:px-10 py-4 lg:mx-10 lg:mt-2 flex justify-between items-center bg-transparent"
+      >
+        <a class="text-3xl font-bold leading-none" href="#">
+          <img
+            class="md:h-8 h-6"
+            src="assets/images/logo.png"
+            alt="logo-desktop"
+          />
+        </a>
+        <div class="lg:hidden">
+          <button class="navbar-burger flex items-center text-gray-400 p-3">
+            <svg
+              class="block h-5 w-5 fill-current"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Mobile menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+        <ul
+          class="hidden lg:flex lg:items-center lg:space-x-12 mr-auto lg:ml-20"
+        >
+          <!-- Menggunakan mr-auto untuk menggeser menu ke kiri -->
+          <li>
+            <a
+              class="text-primary text-gray-200 nav-menu-link"
+              href="index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-primary text-gray-200 nav-menu-link font-bold"
+              href="projects.html"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-primary text-gray-200 nav-menu-link"
+              href="services.html"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-primary text-gray-200 nav-menu-link"
+              href="about.html"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-primary text-gray-200 nav-menu-link"
+              href="contact.html"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <!-- Togle Darkmode -->
+        <button
+          class="hidden w-12 h-6 rounded-full bg-gray-100 lg:flex items-center transition duration-300 focus:outline-none shadow-sm shadow-gray-700"
+          onclick="toggleTheme()"
+        >
+          <div
+            id="switch-toggle"
+            class="w-8 h-8 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </div>
+        </button>
+        <!-- <a
+            class="hidden lg:inline-block lg:ml-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200"
+            href="#"
+            >Sign In</a
+          >
+          <a
+            class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+            href="#"
+            >Sign up</a
+          > -->
+      </nav>
+      <div class="navbar-menu relative z-50 hidden">
+        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+        <nav
+          class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+        >
+          <div class="flex items-center mb-8">
+            <a class="mr-auto text-3xl font-bold leading-none" href="/">
+              <img
+                class="md:h-8 h-5 ml-3"
+                src="assets/images/logo.png"
+                alt="logo-mobile-navbar"
+              />
+            </a>
+            <button class="navbar-close">
+              <svg
+                class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <ul>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="projects.html"
+                  >Projects</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="services.html"
+                  >Services</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="about.html"
+                  >About</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <div class="pt-6">Darkmode</div>
+            <p class="my-4 text-xs text-center text-gray-400">
+              <span> © mataprojection all rights reserved</span>
+            </p>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <!-- End Navbar -->
+
+    <section>
+      <h1 class="text-center text-3xl mt-11 font-bold">OUR PROJECTIONS</h1>
+
+      <div>
+        <div class="container mx-auto w-10/12 mt-12">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
+          >
+            <!-- Card 1 -->
+            <div
+              class="rounded-xl shadow hover:shadow-2xl duration-200 relative mt-4 md:mt-0"
+              style="background-color: #dee1e6"
+            >
+              <div class="pt-4 pb-3">
+                <img
+                  src="assets/images/projectsclient1.png"
+                  alt="jeevalogo"
+                  style="margin-left: auto; margin-right: auto"
+                />
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200"
+                >
+                  <button class="text-white font-bold myBtn_multi">
+                    <img
+                      src="assets/images/icon-play.png"
+                      alt="play"
+                      class="h-16"
+                    />
+                    <p>Click Here</p>
+                  </button>
+                </div>
+              </div>
+              <div class="w-full">
+                <img
+                  src="assets/images/our-project-jeeva.png"
+                  alt="jeevacover"
+                  class="w-full"
+                />
+              </div>
+              <h5 class="text-center pt-3 pb-4 text-xl">Jeeva Klui</h5>
+            </div>
+            <!-- Main modal -->
+
+            <!-- The Modal  1-->
+
+            <!-- Card 2 -->
+            <div
+              class="rounded-xl shadow hover:shadow-2xl duration-200 relative mt-4 md:mt-0"
+              style="background-color: #dee1e6"
+            >
+              <div class="pt-4 pb-3">
+                <img
+                  src="assets/images/projectsclient2.png"
+                  alt="jeevalogo"
+                  style="margin-left: auto; margin-right: auto"
+                />
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200"
+                >
+                  <button class="text-white font-bold myBtn_multi">
+                    <img
+                      src="assets/images/icon-play.png"
+                      alt="play"
+                      class="h-16"
+                    />
+                    <p>Click Here</p>
+                  </button>
+                </div>
+              </div>
+              <div class="w-full">
+                <img
+                  src="assets/images/our-project-lombok.png"
+                  alt="jeevacover"
+                  class="w-full"
+                />
+              </div>
+              <h5 class="text-center pt-3 pb-4 text-xl">Jeeva Klui</h5>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="rounded-xl shadow hover:shadow-2xl duration-200 relative mt-4 md:mt-0"
+              style="background-color: #dee1e6"
+            >
+              <div class="pt-4 pb-3">
+                <img
+                  src="assets/images/projectsclient2.png"
+                  alt="jeevalogo"
+                  style="margin-left: auto; margin-right: auto"
+                />
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200"
+                >
+                  <button class="text-white font-bold myBtn_multi">
+                    <img
+                      src="assets/images/icon-play.png"
+                      alt="play"
+                      class="h-16"
+                    />
+                    <p>Click Here</p>
+                  </button>
+                </div>
+              </div>
+              <div class="w-full">
+                <img
+                  src="assets/images/our-project-bobocabin.png"
+                  alt="jeevacover"
+                  class="w-full"
+                />
+              </div>
+              <h5 class="text-center pt-3 pb-4 text-xl">Jeeva Klui</h5>
+            </div>
+          </div>
+
+          <!-- Modal Content 1 -->
+          <div class="modal modal_multi">
+            <!-- Modal content 1-->
+            <div class="modal-content">
+              <span class="close close_multi">×</span>
+              <iframe
+                width="100%"
+                height="640"
+                frameborder="0"
+                allow="xr-spatial-tracking; gyroscope; accelerometer"
+                allowfullscreen
+                scrolling="no"
+                src="https://kuula.co/share/collection/7XMWr?logo=1&info=0&logosize=123&fs=1&vr=0&gyro=0&initload=0&thumbs=1"
+              ></iframe>
+            </div>
+          </div>
+          <!-- Modal Content 2 -->
+          <div class="modal modal_multi">
+            <div class="modal-content">
+              <span class="close close_multi">×</span>
+              <iframe
+                width="100%"
+                height="640"
+                frameborder="0"
+                allow="xr-spatial-tracking; gyroscope; accelerometer"
+                allowfullscreen
+                scrolling="no"
+                src="https://kuula.co/share/collection/7X6vr?logo=1&info=0&logosize=123&fs=1&vr=0&gyro=0&initload=0&thumbs=1"
+              ></iframe>
+            </div>
+          </div>
+          <!-- Modal Content 3 -->
+          <div class="modal modal_multi">
+            <div class="modal-content">
+              <span class="close close_multi">×</span>
+              <iframe
+                width="100%"
+                height="640"
+                frameborder="0"
+                allow="xr-spatial-tracking; gyroscope; accelerometer"
+                allowfullscreen
+                scrolling="no"
+                src="https://kuula.co/share/collection/7XMWr?logo=1&info=0&logosize=123&fs=1&vr=0&gyro=0&initload=0&thumbs=1"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="background-color: #353a40" class="mt-20">
+      <div class="custom-background-footer">
+        <div class="lg:flex pt-16 pb-44 w-8/12 gap-36 mx-auto">
+          <div class="">
+            <h2 class="text-white font-bold text-3xl">GET IN TOUCH WITH US!</h2>
+            <div class="mt-5">
+              <input
+                type="text"
+                placeholder="Enter your Name"
+                class="w-full py-3 px-3 rounded-lg custom-input"
+              />
+            </div>
+            <div class="lg:flex gap-1 lg:mt-4">
+              <div class="lg:w-1/2 w-full mt-4 lg:mt-0">
+                <input
+                  type="email"
+                  placeholder="Enter your Email"
+                  class="py-3 px-3 rounded-lg custom-input lg:mr-7 w-full"
+                />
+              </div>
+              <div class="lg:w-1/2 w-full mt-4 lg:mt-0">
+                <input
+                  type="number"
+                  placeholder="Enter your Phone Number"
+                  class="py-3 px-3 rounded-lg custom-input w-full"
+                />
+              </div>
+            </div>
+            <div class="mt-4">
+              <select class="w-full py-3 px-3 rounded-lg custom-select">
+                <option value="" disabled selected>Select Project</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </select>
+            </div>
+            <div class="mt-4">
+              <textarea
+                id="message"
+                rows="4"
+                class="block p-2.5 w-full text-sm rounded-lg border custom-input"
+                placeholder="Tell us what you have in mind..."
+              ></textarea>
+            </div>
+            <div class="mt-4">
+              <button
+                class="py-2 w-2/5 text-3xl rounded-lg custom-button-green text-white"
+              >
+                SEND
+              </button>
+            </div>
+          </div>
+          <div class="mt-12 lg:mt-0">
+            <h2 class="text-white font-bold text-3xl">CONNECT WITH US</h2>
+            <div
+              class="flex justify-start lg:justify-center lg:w-full mx-auto custom-button-green px-5 py-3 rounded-xl"
+              style="margin-top: 20px"
+            >
+              <img
+                class="w-9 md:w-7 lg:w-14 fb-icon grayscale"
+                src="assets/images/fb icons.png"
+                alt="fb icon"
+                style="margin-right: 30px"
+              />
+              <img
+                class="w-9 md:w-7 lg:w-14 ig-icon grayscale"
+                src="assets/images/ig icons.png"
+                alt="ig icon"
+                style="margin-right: 30px"
+              />
+              <img
+                class="w-9 md:w-7 lg:w-14 grayscale"
+                src="assets/images/linkedin icons.png"
+                alt="linkedin icon"
+                style="margin-right: 30px"
+              />
+
+              <img
+                class="w-9 md:w-7 lg:w-14 grayscale"
+                src="assets/images/tiktok icons.png"
+                alt="tiktok icon"
+              />
+            </div>
+            <h4 class="text-white text-xl mt-5">follow us on social media</h4>
+            <h2 class="text-white font-bold text-3xl my-4">CONTACT</h2>
+            <div class="mt-12 lg:mt-0">
+              <h2 class="text-white font-bold text-3xl">CONNECT WITH US</h2>
+              <div
+                class="flex justify-start w-1/2 custom-button-green px-5 py-3 rounded-xl"
+                style="margin-top: 20px"
+              >
+                <img
+                  class="w-9 md:w-7 lg:w-14 grayscale"
+                  src="assets/images/gmail icons.png"
+                  alt="wa icon"
+                  style="margin-right: 30px"
+                />
+                <img
+                  class="w-9 md:w-7 lg:w-14 grayscale"
+                  src="assets/images/wa icons.png"
+                  alt="wa icon"
+                  style="margin-right: 30px"
+                />
+              </div>
+              <div class="mt-5">
+                <a href="#" class="text-white text-xl underline"
+                  >mataprojection.360@gmail.com</a
+                >
+              </div>
+              <div class="mt-5">
+                <a href="#" class="text-white text-xl">+62 821-2242-5365</a>
+              </div>
+              <div class="mt-5">
+                <a href="#" class="text-white text-xl">Jakarta, Indonesia</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-3xl text-center py-8 font-bold"
+        style="color: rgb(158, 158, 158)"
+      >
+        ©MATA PROJECTION
+      </div>
+    </footer>
+    <!-- Script Navbar -->
+    <script>
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+    </script>
+    <!-- End Navbar -->
+
+    <!-- Modal -->
+    <script>
+      // Get the modal
+
+      var modalparent = document.getElementsByClassName("modal_multi");
+
+      // Get the button that opens the modal
+
+      var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
+
+      // Get the <span> element that closes the modal
+      var span_close_multi = document.getElementsByClassName("close_multi");
+
+      // When the user clicks the button, open the modal
+      function setDataIndex() {
+        for (i = 0; i < modal_btn_multi.length; i++) {
+          modal_btn_multi[i].setAttribute("data-index", i);
+          modalparent[i].setAttribute("data-index", i);
+          span_close_multi[i].setAttribute("data-index", i);
+        }
+      }
+
+      for (i = 0; i < modal_btn_multi.length; i++) {
+        modal_btn_multi[i].onclick = function () {
+          var ElementIndex = this.getAttribute("data-index");
+          modalparent[ElementIndex].style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span_close_multi[i].onclick = function () {
+          var ElementIndex = this.getAttribute("data-index");
+          modalparent[ElementIndex].style.display = "none";
+        };
+      }
+
+      window.onload = function () {
+        setDataIndex();
+      };
+
+      window.onclick = function (event) {
+        if (
+          event.target === modalparent[event.target.getAttribute("data-index")]
+        ) {
+          modalparent[event.target.getAttribute("data-index")].style.display =
+            "none";
+        }
+
+        // OLD CODE
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      //XXXXXXXXXXXXXXXXXXXXXXX    Modified old code    XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+      // Get the modal
+
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = modal.getElementsByClassName("close")[0]; // Modified by dsones uk
+
+      // When the user clicks on the button, open the modal
+
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+    </script>
+  </body>
+</html>

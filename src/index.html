@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <title>Mataproject - Home</title>
+  </head>
+  <body style="background-color: #f8f9fa">
+    <!-- Navbar -->
+
+    <section>
+      <nav
+        class="relative px-6 md:px-10 py-4 lg:mx-10 lg:mt-2 flex justify-between items-center bg-transparent"
+      >
+        <a class="text-3xl font-bold leading-none" href="#">
+          <img
+            class="md:h-8 h-6"
+            src="assets/images/logo.png"
+            alt="logo-desktop"
+          />
+        </a>
+        <div class="lg:hidden">
+          <button class="navbar-burger flex items-center text-gray-400 p-3">
+            <svg
+              class="block h-5 w-5 fill-current"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Mobile menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+        <ul
+          class="hidden lg:flex lg:items-center lg:space-x-12 mr-auto lg:ml-20"
+        >
+          <!-- Menggunakan mr-auto untuk menggeser menu ke kiri -->
+          <li>
+            <a
+              class="text-primary text-gray-200 nav-menu-link font-bold"
+              href="index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="text-primary text-gray-200 nav-menu-link" href="projects.html"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a class="text-primary text-gray-200 nav-menu-link" href="services.html"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a class="text-primary text-gray-200 nav-menu-link" href="about.html"
+              >About</a
+            >
+          </li>
+          <li>
+            <a class="text-primary text-gray-200 nav-menu-link" href="contact.html"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <!-- Togle Darkmode -->
+        <button
+          class="hidden w-12 h-6 rounded-full bg-gray-100 lg:flex items-center transition duration-300 focus:outline-none shadow-sm shadow-gray-700"
+          onclick="toggleTheme()"
+        >
+          <div
+            id="switch-toggle"
+            class="w-8 h-8 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </div>
+        </button>
+        <!-- <a
+            class="hidden lg:inline-block lg:ml-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200"
+            href="#"
+            >Sign In</a
+          >
+          <a
+            class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+            href="#"
+            >Sign up</a
+          > -->
+      </nav>
+      <div class="navbar-menu relative z-50 hidden">
+        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+        <nav
+          class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+        >
+          <div class="flex items-center mb-8">
+            <a class="mr-auto text-3xl font-bold leading-none" href="/">
+              <img
+                class="md:h-8 h-5 ml-3"
+                src="assets/images/logo.png"
+                alt="logo-mobile-navbar"
+              />
+            </a>
+            <button class="navbar-close">
+              <svg
+                class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <ul>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="projects.html"
+                  >Projects</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="services.html"
+                  >Services</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="about.html"
+                  >About</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="block py-3 px-3 text-primary font-semibold text-gray-400 hover:bg-gray-100 hover:text-gray-800 rounded"
+                  href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <div class="pt-6">Darkmode</div>
+            <p class="my-4 text-xs text-center text-gray-400">
+              <span> © mataprojection all rights reserved</span>
+            </p>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <!-- End Navbar -->
+
+    <!-- Section 1 -->
+    <section
+      class="px-6 md:px-10 lg:px-10 lg:w-11/12 mx-auto flex mb-20 lg:mb-28"
+    >
+      <!-- Bagian Kiri -->
+
+      <div class="w-full md:w-6/12 lg:w-7/12">
+        <!-- Background Transparant -->
+        <section class="md:w-full lg:w-10/12 hidden md:flex relative">
+          <img
+            src="assets/images/Ellipse 7.png"
+            alt="ellipse1"
+            class="ellipse1"
+          />
+          <div
+            class="w-full absolute -z-10 md:-left-14 lg:-left-36 lg:top-16 bg-transparant1"
+          ></div>
+        </section>
+        <div class="w-full mx-auto block md:hidden">
+          <div class="mt-5">
+            <video
+              class="rounded-3xl"
+              src="https://static.kuula.io/video/home.mp4"
+              poster="https://static.kuula.io/prod/assets/pages/features/kuula-player.jpg"
+              loop=""
+              muted=""
+              autoplay
+              preload="auto"
+              controlsList="nodownload"
+            ></video>
+          </div>
+          <!-- Logo Sosmed -->
+          <div
+            class="flex justify-center w-1/2 mx-auto"
+            style="margin-top: 20px"
+          >
+            <img
+              class="w-9 md:w-7 lg:w-10 fb-icon grayscale"
+              src="assets/images/fb icon hover.png"
+              alt="fb icon"
+              style="margin-right: 30px"
+            />
+            <img
+              class="w-9 md:w-7 lg:w-10 ig-icon grayscale"
+              src="assets/images/ig icon hover.png"
+              alt="ig icon"
+              style="margin-right: 30px"
+            />
+            <img
+              class="w-9 md:w-7 lg:w-10 grayscale"
+              src="assets/images/linkedin icon hover.png"
+              alt="linkedin icon"
+              style="margin-right: 30px"
+            />
+            <img
+              class="w-9 md:w-7 lg:w-10 grayscale"
+              src="assets/images/wa icon hover.png"
+              alt="wa icon"
+              style="margin-right: 30px"
+            />
+            <img
+              class="w-9 md:w-7 lg:w-10 grayscale"
+              src="assets/images/tiktok icon hover.png"
+              alt="tiktok icon"
+            />
+          </div>
+        </div>
+        <div class="md:text-base lg:text-3xl title-line-height pt-6">
+          “Bridging the gap, to those who <b>near or far.</b> <br />
+          Far or near, all <b>come closer. <br /></b> Reach
+          <b>every place</b> through your finger”
+        </div>
+        <div class="text-base py-4">
+          In today's globalized era, technology is <b>advancing</b> rapidly. The
+          significance of digitization in <br />
+          the current era has made every sector <b>more competitive.</b> How can
+          we position ourselves <br />
+          competitively?
+        </div>
+        <section class="flex justify-items-center items-center gap-6">
+          <div>
+            <a
+              target="_blank"
+              href="#"
+              class="group font-medium tracking-wide select-none text-base relative inline-flex items-center justify-center cursor-pointer h-10 border-2 border-solid py-0 px-4 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-gray-700 text-white border-gray-700 hover:text-gray-700 focus:text-gray-700 font-sans"
+            >
+              <strong class="font-medium"><b>Get Started</b></strong>
+              <span
+                class="absolute bg-white bottom-0 w-0 right-0 h-full transition-all ease-in-out duration-300 group-hover:w-full -z-[1] group-focus:w-full"
+              ></span>
+            </a>
+          </div>
+          <div>
+            <a
+              href="#"
+              class="relative inline-block text-white font-sans font-bold text-base pb-1 mt-3 hover:text-white overflow-hidden button-section1"
+            >
+              See Our Projects
+              <span
+                class="absolute inset-x-0 bottom-0 h-0.5 bg-gray-700 transition-transform duration-300 transform translate-x-full group-hover:translate-x-0"
+              ></span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Carrousel Section 1 -->
+        <section class="container-swiper lg:-ml-28 mt-5 md:mt-20 lg:mt-0">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div
+                class="group swiper-slide2 relative m-0 flex rounded-xl sm:mx-auto sm:max-w-lg carrousel-item-section1-img"
+              >
+                <div
+                  class="z-10 carrousel-item-section1-img overflow-hidden rounded-xl opacity-80 transition duration-300 ease-in-out group-hover:opacity-90 dark:opacity-70"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
+                    class="animate-fade-in block scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110 carrousel-item-section1-img"
+                    alt="image carrousel 1"
+                  />
+                </div>
+                <div
+                  class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110"
+                >
+                  <h1
+                    class="font-serif text-2xl font-bold text-white shadow-xl"
+                  >
+                    Azores
+                  </h1>
+                  <h1 class="text-sm font-light text-gray-200 shadow-xl">
+                    A Little Paradise in Portugal
+                  </h1>
+                </div>
+              </div>
+              <div
+                class="group swiper-slide2 relative m-0 flex rounded-xl sm:mx-auto sm:max-w-lg carrousel-item-section1-img"
+              >
+                <div
+                  class="z-10 carrousel-item-section1-img overflow-hidden rounded-xl opacity-80 transition duration-300 ease-in-out group-hover:opacity-90 dark:opacity-70"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
+                    class="animate-fade-in block scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110 carrousel-item-section1-img"
+                    alt="image carrousel 1"
+                  />
+                </div>
+                <div
+                  class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110"
+                >
+                  <h1
+                    class="font-serif text-2xl font-bold text-white shadow-xl"
+                  >
+                    Azores
+                  </h1>
+                  <h1 class="text-sm font-light text-gray-200 shadow-xl">
+                    A Little Paradise in Portugal
+                  </h1>
+                </div>
+              </div>
+              <div
+                class="group swiper-slide2 relative m-0 flex rounded-xl sm:mx-auto sm:max-w-lg carrousel-item-section1-img"
+              >
+                <div
+                  class="z-10 carrousel-item-section1-img overflow-hidden rounded-xl opacity-80 transition duration-300 ease-in-out group-hover:opacity-90 dark:opacity-70"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
+                    class="animate-fade-in block scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110 carrousel-item-section1-img"
+                    alt="image carrousel 1"
+                  />
+                </div>
+                <div
+                  class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110"
+                >
+                  <h1
+                    class="font-serif text-2xl font-bold text-white shadow-xl"
+                  >
+                    Azores
+                  </h1>
+                  <h1 class="text-sm font-light text-gray-200 shadow-xl">
+                    A Little Paradise in Portugal
+                  </h1>
+                </div>
+              </div>
+              <div
+                class="group swiper-slide2 relative m-0 flex rounded-xl sm:mx-auto sm:max-w-lg carrousel-item-section1-img"
+              >
+                <div
+                  class="z-10 carrousel-item-section1-img overflow-hidden rounded-xl opacity-80 transition duration-300 ease-in-out group-hover:opacity-90 dark:opacity-70"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
+                    class="animate-fade-in block scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110 carrousel-item-section1-img"
+                    alt="image carrousel 1"
+                  />
+                </div>
+                <div
+                  class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110"
+                >
+                  <h1
+                    class="font-serif text-2xl font-bold text-white shadow-xl"
+                  >
+                    Azores
+                  </h1>
+                  <h1 class="text-sm font-light text-gray-200 shadow-xl">
+                    A Little Paradise in Portugal
+                  </h1>
+                </div>
+              </div>
+              <div
+                class="group swiper-slide2 relative m-0 flex rounded-xl sm:mx-auto sm:max-w-lg carrousel-item-section1-img"
+              >
+                <div
+                  class="z-10 carrousel-item-section1-img overflow-hidden rounded-xl opacity-80 transition duration-300 ease-in-out group-hover:opacity-90 dark:opacity-70"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
+                    class="animate-fade-in block scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110 carrousel-item-section1-img"
+                    alt="image carrousel 1"
+                  />
+                </div>
+                <div
+                  class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110"
+                >
+                  <h1
+                    class="font-serif text-2xl font-bold text-white shadow-xl"
+                  >
+                    Azores
+                  </h1>
+                  <h1 class="text-sm font-light text-gray-200 shadow-xl">
+                    A Little Paradise in Portugal
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+      </div>
+      <!-- Bagian Kanan -->
+      <div class="md:w-6/12 lg:w-5/12 hidden md:block">
+        <div class="mt-12 lg:mt-14 lg:pr-10">
+          <video
+            class="rounded-3xl"
+            src="https://static.kuula.io/video/home.mp4"
+            poster="https://static.kuula.io/prod/assets/pages/features/kuula-player.jpg"
+            loop=""
+            muted=""
+            autoplay
+            preload="auto"
+            controlsList="nodownload"
+          ></video>
+        </div>
+        <!-- Logo Sosmed -->
+        <div class="flex justify-center w-full" style="margin-top: 20px">
+          <img
+            class="w-9 md:w-7 lg:w-10 grayscale"
+            src="assets/images/fb icon hover.png"
+            alt="fb icon"
+            style="margin-right: 30px"
+          />
+          <img
+            class="w-9 md:w-7 lg:w-10 grayscale"
+            src="assets/images/ig icon hover.png"
+            alt="ig icon"
+            style="margin-right: 30px"
+          />
+          <img
+            class="w-9 md:w-7 lg:w-10 grayscale"
+            src="assets/images/linkedin icon hover.png"
+            alt="linkedin icon"
+            style="margin-right: 30px"
+          />
+          <img
+            class="w-9 md:w-7 lg:w-10 grayscale"
+            src="assets/images/wa icon hover.png"
+            alt="wa icon"
+            style="margin-right: 30px"
+          />
+          <img
+            class="w-9 md:w-7 lg:w-10 grayscale"
+            src="assets/images/tiktok icon hover.png"
+            alt="tiktok icon"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- End Section 1 -->
+
+    <!-- Section 2 -->
+    <section class="lg:pt-8">
+      <section
+        class="lg:flex w-full py-12 px-7 lg:px-20 lg:py-12 lg:gap-16"
+        style="background: #dee1e6"
+      >
+        <section class="md:w-9/12 lg:w-7/12 mb-8 mx-auto">
+          <img src="assets/images/Group 47.png" alt="test" class="rounded-xl" />
+        </section>
+
+        <section class="md:w-9/12 lg:w-5/12 mt-4 mx-auto">
+          <div class="border-section2 pl-5 py-2">
+            <span class="text-4xl font-bold">mata</span>
+            <span class="text-xl"
+              >is here to assist in developing marketing <br />
+              aspects related to visual elements through <b>content</b> and
+              <br />
+              <b>digital platforms.</b>
+            </span>
+          </div>
+          <br />
+          <div class="text-xl pl-6">
+            Because humans are naturally drawn to visuals, utilizing images and
+            videos becomes a <b>powerful</b> tool to enhance the appeal and
+            memorability of marketing messages.
+          </div>
+
+          <section
+            style="
+              background: #dee1e6;
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 20px;
+            "
+            class="mt-9"
+          >
+            <div
+              class="bg-transparant2 shadow hover:shadow-lg duration-150 flex items-center gap-1 md:gap-3 justify-center"
+            >
+              <div>
+                <img
+                  src="assets/images/360section2.png"
+                  alt="360 fitur"
+                  class="h-14 lg:h-20"
+                />
+              </div>
+              <div
+                class="text-sm md:text-base lg:text-lg"
+                style="text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3)"
+              >
+                360° Virtual Tour
+              </div>
+            </div>
+            <div
+              class="bg-transparant2 shadow hover:shadow-lg duration-200 flex items-center gap-1 md:gap-3 justify-center"
+            >
+              <div>
+                <img
+                  src="assets/images/360section2.png"
+                  alt="360 fitur"
+                  class="h-14 lg:h-20"
+                />
+              </div>
+              <div
+                class="text-sm md:text-base lg:text-lg"
+                style="text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3)"
+              >
+                360° Virtual Tour
+              </div>
+            </div>
+            <div
+              class="bg-transparant2 shadow hover:shadow-lg duration-150 flex items-center gap-1 md:gap-3 justify-center"
+            >
+              <div>
+                <img
+                  src="assets/images/360section2.png"
+                  alt="360 fitur"
+                  class="h-14 lg:h-20"
+                />
+              </div>
+              <div
+                class="text-sm md:text-base lg:text-lg"
+                style="text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3)"
+              >
+                360° Virtual Tour
+              </div>
+            </div>
+            <div
+              class="bg-transparant2 shadow hover:shadow-lg duration-150 flex items-center gap-1 md:gap-3 justify-center"
+            >
+              <div>
+                <img
+                  src="assets/images/360section2.png"
+                  alt="360 fitur"
+                  class="h-14 lg:h-20"
+                />
+              </div>
+              <div
+                class="text-sm md:text-base lg:text-lg"
+                style="text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3)"
+              >
+                360° Virtual Tour
+              </div>
+            </div>
+          </section>
+        </section>
+      </section>
+    </section>
+    <!-- End Section 2 -->
+
+    <!-- Section 3 -->
+    <section class="py-12">
+      <div class="text-center w-10/12 lg:w-8/12 mx-auto">
+        <h1 class="text-2xl lg:text-4xl mb-5 font-bold">OUR SERVICES</h1>
+        <p class="text-base lg:text-xl">
+          Our HD 360° Virtual Tour service not only showcases images but also
+          tells a complete story interactively. It's more than just a typical
+          promotional tool; it's an effective way to introduce and market your
+          business comprehensively. Please don't hesitate to utilize our service
+          and discover the direct long-term benefits.
+        </p>
+      </div>
+
+      <!-- Card section 3 -->
+      <section class="w-full my-8 lg:flex justify-center mx-auto gap-6 hidden">
+        <div
+          class="w-3/12 border bg-transparant3 duration-200 shadow rounded-xl text-center text-black p-4"
+        >
+          <div
+            style="background-color: rgba(217, 217, 217, 0.5)"
+            class="px-3 py-5 rounded-lg"
+          >
+            <h1 class="text-4xl">360° Video</h1>
+            <p class="py-2">
+              Immerse yourself in captivating experiences <br />
+              with our dynamic 360-degree videos.
+            </p>
+            <div class="mt-2">
+              <a
+                target="_blank"
+                href="#"
+                class="group font-medium tracking-wide select-none text-sm relative inline-flex items-center justify-center cursor-pointer h-10 border-2 border-solid py-1 px-7 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-gray-700 text-white border-gray-700 hover:text-gray-700 focus:text-gray-700 font-sans"
+              >
+                <p>START PROJECT</p>
+                <span
+                  class="absolute bg-white bottom-0 w-0 right-0 h-full transition-all ease-in-out duration-300 group-hover:w-full -z-[1] group-focus:w-full"
+                ></span>
+              </a>
+            </div>
+          </div>
+          <p class="py-6 text-justify text-base">
+          
+            <b>360° Video - features:</b>
+          </p>
+
+          <div class="text-base text-start mb-14 flex flex-col gap-2">
+            <h5>✔ Aerial 360 Video</h5>
+            <h5>✔ Varied Angles</h5>
+            <h5>✔ HD Quality</h5>
+            <h5>✔ Aerial Panoramas</h5>
+            <h5>✔ Background Music</h5>
+          </div>
+        </div>
+        <div
+          class="w-3/12 border bg-transparant3 duration-200 shadow rounded-xl text-center text-black p-4"
+        >
+          <div
+            style="background-color: rgba(217, 217, 217, 0.5)"
+            class="px-3 py-5 rounded-lg"
+          >
+            <h1 class="text-4xl">360° Virtual Tour</h1>
+            <p class="py-2">
+              Explore spaces digitally with our <br />
+              innovative 360 virtual tours.
+            </p>
+            <div class="mt-2">
+              <a
+                target="_blank"
+                href="#"
+                class="group font-medium tracking-wide select-none text-sm relative inline-flex items-center justify-center cursor-pointer h-10 border-2 border-solid py-1 px-7 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-gray-700 text-white border-gray-700 hover:text-gray-700 focus:text-gray-700 font-sans"
+              >
+                <p>START PROJECT</p>
+                <span
+                  class="absolute bg-white bottom-0 w-0 right-0 h-full transition-all ease-in-out duration-300 group-hover:w-full -z-[1] group-focus:w-full"
+                ></span>
+              </a>
+            </div>
+          </div>
+          <p class="py-6 text-justify text-base">
+           
+            <b>360° Virtual Tours - features & functions:</b>
+          </p>
+
+          <div class="text-base text-start mb-14 flex flex-col gap-2">
+            <h5>✔ Aerial Panoramas</h5>
+            <h5>✔ Interactive Hotspots</h5>
+            <h5>✔ Information Buttons</h5>
+            <h5>✔ Embeded Maps</h5>
+            <h5>✔ Motion Hybrd Videos</h5>
+            <h5>✔ Background Music</h5>
+          </div>
+        </div>
+        <div
+          class="w-3/12 border bg-transparant3 duration-200 shadow rounded-xl text-center text-black p-4"
+        >
+          <div
+            style="background-color: rgba(217, 217, 217, 0.5)"
+            class="px-3 py-5 rounded-lg"
+          >
+            <h1 class="text-4xl">360° Automotive</h1>
+            <p class="py-2">
+              Immerse yourself in captivating experiences <br />
+              with our dynamic 360-degree videos.
+            </p>
+            <div class="mt-2">
+              <a
+                target="_blank"
+                href="#"
+                class="group font-medium tracking-wide select-none text-sm relative inline-flex items-center justify-center cursor-pointer h-10 border-2 border-solid py-1 px-7 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-gray-700 text-white border-gray-700 hover:text-gray-700 focus:text-gray-700 font-sans"
+              >
+                <p>START PROJECT</p>
+                <span
+                  class="absolute bg-white bottom-0 w-0 right-0 h-full transition-all ease-in-out duration-300 group-hover:w-full -z-[1] group-focus:w-full"
+                ></span>
+              </a>
+            </div>
+          </div>
+          <p class="py-6 text-justify text-base">
+           
+            <br />
+            <b>360° Automotive - features & functions</b>
+          </p>
+
+          <div class="text-base text-start mb-14 flex flex-col gap-2">
+            <h5>✔ 360° View</h5>
+            <h5>✔ Interactive Hotspots</h5>
+            <h5>✔ Interactive Zoom</h5>
+            <h5>✔ Detail Customization</h5>
+            <h5>✔ Interactive Video</h5>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card Section 3 mobile -->
+      <div class="container-carousel lg:hidden">
+        <div class="card-carousel">
+          <div class="card" id="1">
+            <div
+              class=" border bg-transparant3 duration-200 shadow rounded-xl text-center text-black p-4"
+            >
+              <div
+                style="background-color: rgba(217, 217, 217, 0.5)"
+                class="px-3 py-5 rounded-lg"
+              >
+                <h1 class="text-4xl">360° Video</h1>
+                <p class="py-2">
+                  Immerse yourself in captivating experiences <br />
+                  with our dynamic 360-degree videos.
+                </p>
+                <div class="mt-2">
+                  <a
+                    target="_blank"
+                    href="#"
+                    class="group font-medium tracking-wide select-none text-sm relative inline-flex items-center justify-center cursor-pointer h-10 border-2 border-solid py-1 px-7 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-gray-700 text-white border-gray-700 hover:text-gray-700 focus:text-gray-700 font-sans"
+                  >
+                    <p>START PROJECT</p>
+                    <span
+                      class="absolute bg-white bottom-0 w-0 right-0 h-full transition-all ease-in-out duration-300 group-hover:w-full -z-[1] group-focus:w-full"
+                    ></span>
+                  </a>
+                </div>
+              </div>
+             
+              </p>
+
+              <div class="text-base text-start mb-14 mt-8 flex flex-col gap-2 ">
+                <h5>✔ Aerial 360 Video</h5>
+                <h5>✔ Varied Angles</h5>
+                <h5>✔ HD Quality</h5>
+                <h5>✔ Aerial Panoramas</h5>
+                <h5>✔ Background Music</h5>
+              </div>
+            </div>
+          </div>
+          <div class="card" id="2">
+            <div
+            class="border bg-transparant3 duration-200 shadow rounded-xl text-center text-black p-4"
+          >
+            <div
+              style="background-color: rgba(217, 217, 217, 0.5)"
+              class="px-3 py-5 rounded-lg"
+            >
+              <h1 class="text-4xl">360° Virtual Tour</h1>
+              <p class="py-2">
+                Explore spaces digitally with our <br />
+                innovative 360 virtual tours.
+              </p>
+              <div class="mt-2">
+                <a
+                  target="_blank"
+                  href="#"
+                  class="group font-medium tracking-wide select-none text-sm relative inline-flex items-center justify-center cursor-pointer h-10 border-2 border-solid py-1 px-7 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-gray-700 text-white border-gray-700 hover:text-gray-700 focus:text-gray-700 font-sans"
+                >
+                  <p>START PROJECT</p>
+                  <span
+                    class="absolute bg-white bottom-0 w-0 right-0 h-full transition-all ease-in-out duration-300 group-hover:w-full -z-[1] group-focus:w-full"
+                  ></span>
+                </a>
+              </div>
+            </div>
+           
+            <div class="text-base text-start  flex flex-col gap-2">
+              <h5>✔ Aerial Panoramas</h5>
+              <h5>✔ Interactive Hotspots</h5>
+              <h5>✔ Information Buttons</h5>
+              <h5>✔ Embeded Maps</h5>
+              <h5>✔ Motion Hybrd Videos</h5>
+              <h5>✔ Background Music</h5>
+            </div>
+          </div>
+          </div>
+          <div class="card" id="3">
+            <div
+            class="border bg-transparant3 duration-200 shadow rounded-xl text-center text-black p-4"
+          >
+            <div
+              style="background-color: rgba(217, 217, 217, 0.5)"
+              class="px-3 py-5 rounded-lg"
+            >
+              <h1 class="text-4xl">360° Automotive</h1>
+              <p class="py-2">
+                Immerse yourself in captivating experiences <br />
+                with our dynamic 360-degree videos.
+              </p>
+              <div class="mt-2">
+                <a
+                  target="_blank"
+                  href="#"
+                  class="group font-medium tracking-wide select-none text-sm relative inline-flex items-center justify-center cursor-pointer h-10 border-2 border-solid py-1 px-7 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-gray-700 text-white border-gray-700 hover:text-gray-700 focus:text-gray-700 font-sans"
+                >
+                  <p>START PROJECT</p>
+                  <span
+                    class="absolute bg-white bottom-0 w-0 right-0 h-full transition-all ease-in-out duration-300 group-hover:w-full -z-[1] group-focus:w-full"
+                  ></span>
+                </a>
+              </div>
+            </div>
+  
+            <div class="text-base text-start mb-10 flex flex-col gap-2">
+              <h5>✔ 360° View</h5>
+              <h5>✔ Interactive Hotspots</h5>
+              <h5>✔ Interactive Zoom</h5>
+              <h5>✔ Detail Customization</h5>
+              <h5>✔ Interactive Video</h5>
+            </div>
+          </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+    <!-- End Section 3 -->
+
+    <!-- Section 4 -->
+    <footer style="background-color: #353A40;">
+      
+      <div
+        style="
+         background: linear-gradient(
+            to bottom right,
+            #353A40,
+            #6C757E
+          ); 
+        "
+        class="mx-auto bg-cover bg-fixed bg-center bg-no-repeat shadow-lg pb-3"
+      >
+        <h5
+          class="text-xl font-bold text-center pt-9 pb-4"
+          style="color: #f8f9fb; text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3)"
+        >
+          Trusted by 10+ best companies in Indonesia
+        </h5>
+
+        <section class="mb-16">
+          <div class="slider-client">
+            <div class="item-client">
+              <img src="assets/images/client1.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client2.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client3.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client4.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client5.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client1.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client2.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client3.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client1.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client2.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client3.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client4.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client5.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client1.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client2.png" alt="" />
+            </div>
+            <div class="item-client">
+              <img src="assets/images/client3.png" alt="" />
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="custom-background-footer ">
+          <div class="lg:flex pt-16 pb-44 w-8/12 gap-36 mx-auto">
+            <div class="">
+             <h2 class="text-white font-bold text-3xl">GET IN TOUCH WITH US!</h2> 
+             <div class="mt-5">
+              <input type="text" placeholder="Enter your Name" class="w-full py-3 px-3 rounded-lg custom-input">
+             </div>
+             <div class="lg:flex gap-1 lg:mt-4">
+              <div class="lg:w-1/2 w-full mt-4 lg:mt-0">
+                <input type="email" placeholder="Enter your Email" class=" py-3 px-3 rounded-lg custom-input  lg:mr-7 w-full ">
+              </div>
+             <div class="lg:w-1/2 w-full mt-4 lg:mt-0">
+              <input type="number" placeholder="Enter your Phone Number" class=" py-3 px-3 rounded-lg custom-input w-full  ">
+             </div>
+            
+             </div>
+             <div class="mt-4">
+              <select class="w-full py-3 px-3 rounded-lg custom-select">
+                <option value="" disabled selected>Select Project</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </select>
+             </div>
+             <div class="mt-4">
+              <textarea id="message" rows="4" class="block p-2.5 w-full text-sm  rounded-lg border custom-input " placeholder="Tell us what you have in mind..."></textarea>
+             </div>
+             <div class="mt-4">
+              <button  class="py-2 w-2/5 text-3xl rounded-lg custom-button-green text-white">SEND</button>
+             </div>
+             
+            
+            </div>
+            <div class="mt-12 lg:mt-0">
+              <h2 class="text-white font-bold text-3xl">  CONNECT WITH US</h2> 
+              <div
+              class="flex justify-start lg:justify-center lg:w-full mx-auto custom-button-green px-5 py-3 rounded-xl"
+              style="margin-top: 20px"
+            >
+              <img
+                class="w-9 md:w-7 lg:w-14 fb-icon grayscale"
+                src="assets/images/fb icons.png"
+                alt="fb icon"
+                style="margin-right: 30px"
+              />
+              <img
+                class="w-9 md:w-7 lg:w-14 ig-icon grayscale"
+                src="assets/images/ig icons.png"
+                alt="ig icon"
+                style="margin-right: 30px"
+              />
+              <img
+                class="w-9 md:w-7 lg:w-14 grayscale"
+                src="assets/images/linkedin icons.png"
+                alt="linkedin icon"
+                style="margin-right: 30px"
+              />
+             
+              <img
+                class="w-9 md:w-7 lg:w-14 grayscale"
+                src="assets/images/tiktok icons.png"
+                alt="tiktok icon"
+              />
+            </div>
+            <h4 class="text-white text-xl mt-5">follow us on social media</h4>
+            <h2 class="text-white font-bold text-3xl my-4"> CONTACT</h2> 
+            <div class="mt-12 lg:mt-0">
+              <h2 class="text-white font-bold text-3xl">  CONNECT WITH US</h2> 
+              <div
+              class="flex justify-start w-1/2 custom-button-green px-5 py-3 rounded-xl"
+              style="margin-top: 20px"
+            >
+            <img
+            class="w-9 md:w-7 lg:w-14 grayscale"
+            src="assets/images/gmail icons.png"
+            alt="wa icon"
+            style="margin-right: 30px"
+          />
+            <img
+            class="w-9 md:w-7 lg:w-14 grayscale"
+            src="assets/images/wa icons.png"
+            alt="wa icon"
+            style="margin-right: 30px"
+          />
+          </div>
+          <div class=" mt-5">
+            <a href="#" class="text-white text-xl underline ">mataprojection.360@gmail.com</a>
+          </div>
+          <div class=" mt-5">
+            <a href="#" class="text-white text-xl ">+62 821-2242-5365</a>
+          </div>
+          <div class=" mt-5">
+            <a href="#" class="text-white text-xl ">Jakarta, Indonesia</a>
+          </div>
+         
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-3xl text-center py-8 font-bold" style="color: rgb(158, 158, 158);">
+        ©MATA PROJECTION
+      </div>
+    </footer>
+    <!-- End Section 4 -->
+
+    <!-- Script Navbar -->
+    <script>
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+    </script>
+    <!-- Script Darkmode -->
+    <script>
+      const switchToggle = document.querySelector("#switch-toggle");
+      let isDarkmode = false;
+
+      const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>`;
+
+      const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>`;
+
+      function toggleTheme() {
+        isDarkmode = !isDarkmode;
+        localStorage.setItem("isDarkmode", isDarkmode);
+        switchTheme();
+      }
+
+      function switchTheme() {
+        if (isDarkmode) {
+          switchToggle.classList.remove("bg-yellow-500", "-translate-x-2");
+          switchToggle.classList.add("bg-gray-700", "translate-x-full");
+          setTimeout(() => {
+            switchToggle.innerHTML = darkIcon;
+          }, 250);
+        } else {
+          switchToggle.classList.add("bg-yellow-500", "-translate-x-2");
+          switchToggle.classList.remove("bg-gray-700", "translate-x-full");
+          setTimeout(() => {
+            switchToggle.innerHTML = lightIcon;
+          }, 250);
+        }
+      }
+
+      switchTheme();
+    </script>
+    <!-- Script Swiper -->
+    <script>
+      // Inisialisasi Swiper
+      var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        },
+      });
+    </script>
+
+    <script>
+      const cardsContainer = document.querySelector(".card-carousel");
+      const cardsController = document.querySelector(
+        ".card-carousel + .card-controller"
+      );
+
+      class DraggingEvent {
+        constructor(target = undefined) {
+          this.target = target;
+        }
+
+        event(callback) {
+          let handler;
+
+          this.target.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+
+            handler = callback(e);
+
+            window.addEventListener("mousemove", handler);
+
+            document.addEventListener("mouseleave", clearDraggingEvent);
+
+            window.addEventListener("mouseup", clearDraggingEvent);
+
+            function clearDraggingEvent() {
+              window.removeEventListener("mousemove", handler);
+              window.removeEventListener("mouseup", clearDraggingEvent);
+
+              document.removeEventListener("mouseleave", clearDraggingEvent);
+
+              handler(null);
+            }
+          });
+
+          this.target.addEventListener("touchstart", (e) => {
+            handler = callback(e);
+
+            window.addEventListener("touchmove", handler);
+
+            window.addEventListener("touchend", clearDraggingEvent);
+
+            document.body.addEventListener("mouseleave", clearDraggingEvent);
+
+            function clearDraggingEvent() {
+              window.removeEventListener("touchmove", handler);
+              window.removeEventListener("touchend", clearDraggingEvent);
+
+              handler(null);
+            }
+          });
+        }
+
+        // Get the distance that the user has dragged
+        getDistance(callback) {
+          function distanceInit(e1) {
+            let startingX, startingY;
+
+            if ("touches" in e1) {
+              startingX = e1.touches[0].clientX;
+              startingY = e1.touches[0].clientY;
+            } else {
+              startingX = e1.clientX;
+              startingY = e1.clientY;
+            }
+
+            return function (e2) {
+              if (e2 === null) {
+                return callback(null);
+              } else {
+                if ("touches" in e2) {
+                  return callback({
+                    x: e2.touches[0].clientX - startingX,
+                    y: e2.touches[0].clientY - startingY,
+                  });
+                } else {
+                  return callback({
+                    x: e2.clientX - startingX,
+                    y: e2.clientY - startingY,
+                  });
+                }
+              }
+            };
+          }
+
+          this.event(distanceInit);
+        }
+      }
+
+      class CardCarousel extends DraggingEvent {
+        constructor(container, controller = undefined) {
+          super(container);
+
+          // DOM elements
+          this.container = container;
+          this.controllerElement = controller;
+          this.cards = container.querySelectorAll(".card");
+
+          // Carousel data
+          this.centerIndex = (this.cards.length - 1) / 2;
+          this.cardWidth =
+            (this.cards[0].offsetWidth / this.container.offsetWidth) * 100;
+          this.xScale = {};
+
+          // Resizing
+          window.addEventListener("resize", this.updateCardWidth.bind(this));
+
+          if (this.controllerElement) {
+            this.controllerElement.addEventListener(
+              "keydown",
+              this.controller.bind(this)
+            );
+          }
+
+          // Initializers
+          this.build();
+
+          // Bind dragging event
+          super.getDistance(this.moveCards.bind(this));
+        }
+
+        updateCardWidth() {
+          this.cardWidth =
+            (this.cards[0].offsetWidth / this.container.offsetWidth) * 100;
+
+          this.build();
+        }
+
+        build(fix = 0) {
+          for (let i = 0; i < this.cards.length; i++) {
+            const x = i - this.centerIndex;
+            const scale = this.calcScale(x);
+            const scale2 = this.calcScale2(x);
+            const zIndex = -Math.abs(i - this.centerIndex);
+
+            const leftPos = this.calcPos(x, scale2);
+
+            this.xScale[x] = this.cards[i];
+
+            this.updateCards(this.cards[i], {
+              x: x,
+              scale: scale,
+              leftPos: leftPos,
+              zIndex: zIndex,
+            });
+          }
+        }
+
+        controller(e) {
+          const temp = { ...this.xScale };
+
+          if (e.keyCode === 39) {
+            // Left arrow
+            for (let x in this.xScale) {
+              const newX =
+                parseInt(x) - 1 < -this.centerIndex
+                  ? this.centerIndex
+                  : parseInt(x) - 1;
+
+              temp[newX] = this.xScale[x];
+            }
+          }
+
+          if (e.keyCode == 37) {
+            // Right arrow
+            for (let x in this.xScale) {
+              const newX =
+                parseInt(x) + 1 > this.centerIndex
+                  ? -this.centerIndex
+                  : parseInt(x) + 1;
+
+              temp[newX] = this.xScale[x];
+            }
+          }
+
+          this.xScale = temp;
+
+          for (let x in temp) {
+            const scale = this.calcScale(x),
+              scale2 = this.calcScale2(x),
+              leftPos = this.calcPos(x, scale2),
+              zIndex = -Math.abs(x);
+
+            this.updateCards(this.xScale[x], {
+              x: x,
+              scale: scale,
+              leftPos: leftPos,
+              zIndex: zIndex,
+            });
+          }
+        }
+
+        calcPos(x, scale) {
+          let formula;
+
+          if (x < 0) {
+            formula = (scale * 100 - this.cardWidth) / 2;
+
+            return formula;
+          } else if (x > 0) {
+            formula = 100 - (scale * 100 + this.cardWidth) / 2;
+
+            return formula;
+          } else {
+            formula = 100 - (scale * 100 + this.cardWidth) / 2;
+
+            return formula;
+          }
+        }
+
+        updateCards(card, data) {
+          if (data.x || data.x == 0) {
+            card.setAttribute("data-x", data.x);
+          }
+
+          if (data.scale || data.scale == 0) {
+            card.style.transform = `scale(${data.scale})`;
+
+            if (data.scale == 0) {
+              card.style.opacity = data.scale;
+            } else {
+              card.style.opacity = 1;
+            }
+          }
+
+          if (data.leftPos) {
+            card.style.left = `${data.leftPos}%`;
+          }
+
+          if (data.zIndex || data.zIndex == 0) {
+            if (data.zIndex == 0) {
+              card.classList.add("highlight");
+            } else {
+              card.classList.remove("highlight");
+            }
+
+            card.style.zIndex = data.zIndex;
+          }
+        }
+
+        calcScale2(x) {
+          let formula;
+
+          if (x <= 0) {
+            formula = 1 - (-1 / 5) * x;
+
+            return formula;
+          } else if (x > 0) {
+            formula = 1 - (1 / 5) * x;
+
+            return formula;
+          }
+        }
+
+        calcScale(x) {
+          const formula = 1 - (1 / 5) * Math.pow(x, 2);
+
+          if (formula <= 0) {
+            return 0;
+          } else {
+            return formula;
+          }
+        }
+
+        checkOrdering(card, x, xDist) {
+          const original = parseInt(card.dataset.x);
+          const rounded = Math.round(xDist);
+          let newX = x;
+
+          if (x !== x + rounded) {
+            if (x + rounded > original) {
+              if (x + rounded > this.centerIndex) {
+                newX =
+                  x +
+                  rounded -
+                  1 -
+                  this.centerIndex -
+                  rounded +
+                  -this.centerIndex;
+              }
+            } else if (x + rounded < original) {
+              if (x + rounded < -this.centerIndex) {
+                newX =
+                  x +
+                  rounded +
+                  1 +
+                  this.centerIndex -
+                  rounded +
+                  this.centerIndex;
+              }
+            }
+
+            this.xScale[newX + rounded] = card;
+          }
+
+          const temp = -Math.abs(newX + rounded);
+
+          this.updateCards(card, { zIndex: temp });
+
+          return newX;
+        }
+
+        moveCards(data) {
+          let xDist;
+
+          if (data != null) {
+            this.container.classList.remove("smooth-return");
+            xDist = data.x / 250;
+          } else {
+            this.container.classList.add("smooth-return");
+            xDist = 0;
+
+            for (let x in this.xScale) {
+              this.updateCards(this.xScale[x], {
+                x: x,
+                zIndex: Math.abs(Math.abs(x) - this.centerIndex),
+              });
+            }
+          }
+
+          for (let i = 0; i < this.cards.length; i++) {
+            const x = this.checkOrdering(
+                this.cards[i],
+                parseInt(this.cards[i].dataset.x),
+                xDist
+              ),
+              scale = this.calcScale(x + xDist),
+              scale2 = this.calcScale2(x + xDist),
+              leftPos = this.calcPos(x + xDist, scale2);
+
+            this.updateCards(this.cards[i], {
+              scale: scale,
+              leftPos: leftPos,
+            });
+          }
+        }
+      }
+
+      const carousel = new CardCarousel(cardsContainer);
+    </script>
+  </body>
+</html>

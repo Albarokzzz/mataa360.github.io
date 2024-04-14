@@ -1,0 +1,536 @@
+body {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.text-primary {
+  color: #212529;
+  font-size: 13px;
+}
+.text-primary1 {
+  color: #212529;
+  font-size: 15px;
+}
+/* Ubah gambar menjadi hitam putih secara default */
+.grayscale {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease; /* Tambahkan transisi agar perubahan filter gambar terlihat lebih mulus */
+}
+
+/* Hapus filter hitam putih saat dihover */
+.grayscale:hover {
+  filter: grayscale(0%);
+}
+
+.swiper-container-absolute {
+  position: absolute;
+  left: -105px;
+  overflow-x: hidden;
+}
+.swiper-container {
+  margin-top: 20px;
+  display: flex; /* Menggunakan flexbox */
+  overflow-x: auto; /* Menambahkan scroll horizontal jika konten melebihi lebar layar */
+  scrollbar-width: none; /* Menghilangkan scrollbar di Firefox */
+  -ms-overflow-style: none; /* Menghilangkan scrollbar di IE/Edge */
+  width: 95%;
+}
+
+.swiper-container::-webkit-scrollbar {
+  display: none; /* Menghilangkan scrollbar di Chrome/Safari */
+}
+
+.swiper-wrapper {
+  display: flex; /* Menggunakan flexbox */
+  gap: 0; /* Tidak ada jarak antara setiap item */
+  width: 100%;
+}
+
+.swiper-slide {
+  flex: 0 0 auto; /* Biarkan lebar item menyesuaikan kontennya */
+  width: 100px; /* Atur lebar setiap item */
+  margin-right: 0; /* Hapus margin jika ada */
+  padding-right: 0; /* Hapus padding jika ada */
+}
+.carrousel-item-section1-img {
+  width: 100%;
+  height: 153px;
+}
+/* Swiper / slider logo client  */
+
+.slider-client {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  overflow-y: hidden;
+  overflow: hidden;
+  padding: 2.5rem;
+}
+.item-client {
+  animation: animate 25s linear infinite;
+}
+.item-client img {
+  min-width: 220px;
+  padding: 0 30px;
+  transition: filter 0.3s ease;
+  filter: grayscale(100%);
+}
+.item-client img:hover {
+  filter: grayscale(0); /* Menghapus efek grayscale */
+}
+/* .slider-client:hover .item-client {
+  animation-play-state: paused;
+} */
+@keyframes animate {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1800px, 0, 0);
+  }
+}
+/* ===================================================== */
+img .fb-icon {
+  content: url(../assets/images/fb\ icon.png);
+}
+img .fb-icon:hover {
+  content: url(../assets/images/fb\ icon\ hover.png); /* Ganti path/to/hover-image.png dengan path ke gambar hover Anda */
+}
+.button-section1 {
+  position: relative;
+  display: inline-block;
+  color: #495057; /* Warna teks */
+  font-family: sans-serif; /* Font family */
+  font-weight: bold; /* Ketebalan font */
+  text-decoration: none; /* Hilangkan underline */
+  padding-bottom: 0.5rem; /* Jarak antara teks dan border */
+  overflow: hidden; /* Sembunyikan overflow */
+}
+.button-section1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Lebar border bottom */
+  height: 0.15rem; /* Ketebalan border bottom */
+  background-color: #495057; /* Warna border bottom */
+  transition: transform 0.3s ease; /* Transisi transformasi */
+  transform: translateX(-100%); /* Mulai dari luar layar */
+}
+.button-section1:hover::before {
+  transform: translateX(0); /* Geser ke posisi awal */
+}
+.button-section1:hover {
+  color: rgb(153, 154, 154); /* Warna teks saat dihover */
+}
+.border-section2 {
+  border-left: 4px solid black;
+}
+.bg-transparant2 {
+  border-radius: 15px;
+  width: 190px;
+  height: 90px;
+  background: rgba(164, 164, 164, 0.3);
+  /* Menggunakan rgba untuk memberikan opasitas pada latar belakang */
+  /* Menambahkan efek blur */
+  backdrop-filter: blur(50px);
+}
+.bg-transparant3 {
+  background: rgba(202, 202, 202, 0.1);
+  /* Menggunakan rgba untuk memberikan opasitas pada latar belakang */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Menggunakan rgba untuk memberikan opasitas pada warna border kiri */
+  /* Menambahkan efek blur */
+  backdrop-filter: blur(35px);
+}
+
+.bg-transparant3:hover {
+  border: 2px solid black;
+}
+/* ============================================= */
+
+.visuallyhidden {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  opacity: 0;
+}
+
+.container-carousel {
+  overflow: hidden;
+  padding: 20px;
+  margin-top: 2em;
+}
+
+.card-carousel {
+  --card-width: 80%;
+  --card-max-width: 280px;
+  --card-height: 500px;
+  --carousel-min-width: 600px;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: var(--card-height);
+  min-width: var(--carousel-min-width);
+  transition: filter 0.3s ease;
+}
+.custom-input {
+  background-color: #353a40;
+
+  border-radius: 10px; /* Atur radius border sesuai kebutuhan */
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+.custom-select {
+  background-color: #353a40;
+  color: rgb(158, 158, 158);
+  border-radius: 10px; /* Atur radius border sesuai kebutuhan */
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.custom-select:hover,
+.custom-select:focus {
+  background-color: #353a40;
+  outline: none; /* Hapus outline bawaan browser */
+}
+
+.custom-background-footer {
+  background: linear-gradient(
+    to bottom right,
+    #353a40,
+    #495058,
+    #6c757e,
+    #adb6bd,
+    #f8f9fb
+  ); /* Gradien linear dari atas kanan ke kiri bawah */
+  border-radius: 0 0 1100px 1100px; /* Radius border */
+}
+
+.custom-button-green {
+  background: linear-gradient(
+    to bottom right,
+    #57fe4c,
+    #4a8246
+  ); /* Gradien linear dari atas kanan ke kiri bawah */
+  border: 2px solid rgba(87, 254, 76, 0.6);
+}
+
+.custom-button-green:hover {
+  background: linear-gradient(
+    to bottom right,
+    #41c136,
+    #4a8246
+  ); /* Gradien linear dari atas kanan ke kiri bawah */
+}
+@media screen and (max-width: 640px) {
+  .card-carousel {
+    margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2);
+  }
+}
+
+.card-carousel.smooth-return {
+  transition: all 0.2s ease;
+}
+
+.card-carousel .card {
+  background: whitesmoke;
+  width: var(--card-width);
+  max-width: var(--card-max-width);
+  text-align: center;
+  padding: 1em;
+  min-width: 250px;
+  height: var(--card-height);
+  position: absolute;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.5);
+  transition: inherit;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 1em;
+  filter: brightness(0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.highlight {
+  filter: brightness(1);
+}
+
+.card:nth-of-type(1) .image-container {
+  background-image: url("https://static.addtoany.com/images/dracaena-cinnabari.jpg");
+}
+
+.card:nth-of-type(2) .image-container {
+  background-image: url("https://www.w3schools.com/w3css/img_lights.jpg");
+}
+
+.card:nth-of-type(3) .image-container {
+  background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+}
+.card:nth-of-type(4) .image-container {
+  background-image: url("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+}
+.card:nth-of-type(5) .image-container {
+  background-image: url("https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg");
+}
+
+.image-container {
+  width: 8em;
+  height: 8em;
+  position: relative;
+  background-size: cover;
+  margin-bottom: 2em;
+  border-radius: 100%;
+  padding: 1em;
+  -webkit-box-shadow: inset 0px 0px 17px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0px 0px 17px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 17px 0px rgba(0, 0, 0, 0.3);
+}
+
+.image-container::after {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 120%;
+  border: solid 3px rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  position: absolute;
+  top: calc(-10% - 3px);
+  left: calc(-10% - 3px);
+}
+
+/* Untuk Tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .ellipse1 {
+    position: absolute;
+    z-index: -20;
+    right: 200px;
+    top: 100px;
+    height: 400px;
+  }
+  .ellipse2 {
+    position: absolute;
+    z-index: -20;
+    right: 220px;
+    top: 280px;
+    height: 90px;
+  }
+  .ellipse3 {
+    max-height: 250px; /* Menetapkan tinggi maksimum */
+    position: absolute;
+    z-index: -20;
+    right: 0px;
+    top: -200px;
+    overflow: hidden; /* Menyembunyikan bagian yang melebihi tinggi maksimum */
+  }
+  .bg-transparant1 {
+    height: 600px;
+    border-radius: 0 0 400px 0;
+
+    background: rgba(202, 202, 202, 0.1);
+    /* Menggunakan rgba untuk memberikan opasitas pada latar belakang */
+    border-left: 7px solid rgba(255, 255, 255, 0.5); /* Menggunakan rgba untuk memberikan opasitas pada warna border kiri */
+
+    /* Menambahkan efek blur */
+    backdrop-filter: blur(35px);
+  }
+  .container-swiper {
+    margin-top: 50px;
+    position: relative;
+    width: 900px;
+  }
+  /* Masukkan gaya CSS khusus untuk tablet di sini */
+  .swiper-container {
+    margin-top: 20px;
+    display: flex; /* Menggunakan flexbox */
+    overflow-x: auto; /* Menambahkan scroll horizontal jika konten melebihi lebar layar */
+    scrollbar-width: none; /* Menghilangkan scrollbar di Firefox */
+    -ms-overflow-style: none; /* Menghilangkan scrollbar di IE/Edge */
+    width: 100%;
+  }
+
+  .swiper-container::-webkit-scrollbar {
+    display: none; /* Menghilangkan scrollbar di Chrome/Safari */
+  }
+
+  .swiper-wrapper {
+    display: flex; /* Menggunakan flexbox */
+    gap: 0; /* Tidak ada jarak antara setiap item */
+  }
+
+  .swiper-slide {
+    flex: 0 0 auto; /* Biarkan lebar item menyesuaikan kontennya */
+    width: 400px; /* Atur lebar setiap item */
+    margin-right: 0; /* Hapus margin jika ada */
+    padding-right: 0; /* Hapus padding jika ada */
+  }
+  .carrousel-item-section1-img {
+    width: 400px;
+    height: 173px;
+  }
+  .text-primary {
+    color: #212529;
+    font-size: 16px;
+  }
+  .text-primary1 {
+    color: #212529;
+    font-size: 18px;
+  }
+  .bg-transparant2 {
+    border-radius: 15px;
+    width: 270px;
+    height: 110px;
+    background: rgba(116, 116, 116, 0.1);
+    /* Menggunakan rgba untuk memberikan opasitas pada latar belakang */
+    /* Menambahkan efek blur */
+    backdrop-filter: blur(35px);
+  }
+}
+
+/* Untuk Desktop */
+@media only screen and (min-width: 1025px) {
+  .ellipse1 {
+    position: absolute;
+    z-index: -20;
+    right: 230px;
+    top: 140px;
+    height: 800px;
+  }
+  .ellipse2 {
+    position: absolute;
+    z-index: -20;
+    right: 230px;
+    top: 470px;
+  }
+  .ellipse3 {
+    height: 440px;
+    position: absolute;
+    z-index: -20;
+    right: 0px;
+    top: -200px;
+    overflow: hidden; /* Menyembunyikan konten yang melebihi batas */
+  }
+  .bg-transparant1 {
+    height: 800px;
+    border-radius: 0 0 400px 0;
+
+    background: rgba(202, 202, 202, 0.1);
+    /* Menggunakan rgba untuk memberikan opasitas pada latar belakang */
+    border-left: 7px solid rgba(255, 255, 255, 0.5); /* Menggunakan rgba untuk memberikan opasitas pada warna border kiri */
+
+    /* Menambahkan efek blur */
+    backdrop-filter: blur(35px);
+  }
+
+  .swiper-container {
+    margin-top: 50px;
+    display: flex; /* Menggunakan flexbox */
+    overflow-x: auto; /* Menambahkan scroll horizontal jika konten melebihi lebar layar */
+    scrollbar-width: none; /* Menghilangkan scrollbar di Firefox */
+    -ms-overflow-style: none; /* Menghilangkan scrollbar di IE/Edge */
+    width: 88%;
+  }
+
+  .swiper-container::-webkit-scrollbar {
+    display: none; /* Menghilangkan scrollbar di Chrome/Safari */
+  }
+
+  .swiper-wrapper {
+    display: flex; /* Menggunakan flexbox */
+    gap: 0; /* Tidak ada jarak antara setiap item */
+    margin: 0 -30px;
+    padding: 0 -10px;
+  }
+
+  .swiper-slide {
+    flex: 0 0 auto; /* Biarkan lebar item menyesuaikan kontennya */
+    width: 100px; /* Atur lebar setiap item */
+    margin-right: 0; /* Hapus margin jika ada */
+    padding-right: 0; /* Hapus padding jika ada */
+  }
+  .carrousel-item-section1-img {
+    width: 240px;
+    height: 173px;
+  }
+  /* ================================================================================= */
+
+  /* Masukkan gaya CSS khusus untuk desktop di sini */
+  .nav-menu-link {
+    position: relative; /* Menjadikan posisi relative untuk membuat ruang bagi pseudo-element */
+    text-decoration: none;
+    color: #212529; /* Warna teks pada menu */
+  }
+
+  /* Efek border bottom saat dihover */
+  .nav-menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Jarak dari bawah link */
+    width: 0; /* Mulai dengan lebar 0 */
+    height: 2px; /* Tinggi border bottom */
+    background-color: #1a202c; /* Warna border bottom */
+    transition: width 0.3s ease; /* Transisi lebar border bottom */
+  }
+
+  /* Transisi untuk efek border bottom saat dihover */
+  .nav-menu-link:hover::after {
+    width: 115%; /* Lebar border bottom saat dihover */
+  }
+
+  /* Transisi untuk efek border bottom saat tidak dihover */
+  .nav-menu-link:not(:hover)::after {
+    width: 0; /* Lebar border bottom saat tidak dihover */
+  }
+  /* End Navbar */
+  .text-primary {
+    color: #212529;
+    font-size: 20px;
+  }
+  .text-primary1 {
+    color: #212529;
+    font-size: 20px;
+  }
+  .title-line-height {
+    line-height: 38px;
+  }
+  .bg-transparant2 {
+    border-radius: 15px;
+    width: 270px;
+    height: 110px;
+    background: rgba(116, 116, 116, 0.1);
+    /* Menggunakan rgba untuk memberikan opasitas pada latar belakang */
+    /* Menambahkan efek blur */
+    backdrop-filter: blur(35px);
+  }
+}
+
+/* Navbar */
+ul.breadcrumb li + li::before {
+  content: "\276F";
+  padding-left: 8px;
+  padding-right: 4px;
+  color: inherit;
+}
+
+ul.breadcrumb li span {
+  opacity: 60%;
+}
+
+#sidebar {
+  -webkit-transition: all 300ms cubic-bezier(0, 0.77, 0.58, 1);
+  transition: all 300ms cubic-bezier(0, 0.77, 0.58, 1);
+}
+
+#sidebar.show {
+  transform: translateX(0);
+}
+
+#sidebar ul li a.active {
+  background: #1f2937;
+  background-color: #1f2937;
+}
+
+/* End Navbar */
